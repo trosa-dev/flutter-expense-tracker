@@ -10,7 +10,18 @@ var kDarkColorScheme = ColorScheme.fromSeed(
   seedColor: const Color.fromARGB(255, 5, 99, 125),
 );
 
-void main() {
+void main() async {
+  /* this code is necessary to lock and ensure orientation
+  
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]).then(
+    (fn) => runApp(const MyApp()),
+  );  
+  */
+
   runApp(const MyApp());
 }
 
