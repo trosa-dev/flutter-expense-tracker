@@ -1,9 +1,11 @@
 import 'package:expense_tracker/models/expense.dart';
 import 'package:flutter/material.dart';
 
+// Widget to display individual expense items
 class ExpenseItem extends StatelessWidget {
   const ExpenseItem({super.key, required this.expense});
 
+  // The expense to be displayed
   final Expense expense;
 
   @override
@@ -18,6 +20,7 @@ class ExpenseItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
+              // Displaying the title of the expense with a custom text style
               expense.title,
               style: Theme.of(context).textTheme.titleLarge,
             ),
@@ -28,13 +31,14 @@ class ExpenseItem extends StatelessWidget {
                 const Spacer(),
                 Row(
                   children: [
+                    // Displaying the category icon next to the formatted date
                     Icon(categoryIcons[expense.category]),
                     const SizedBox(width: 8),
                     Text(expense.formattedDate),
                   ],
-                )
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),

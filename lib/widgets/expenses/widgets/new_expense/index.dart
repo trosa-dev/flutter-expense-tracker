@@ -5,11 +5,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+// Formatter for displaying dates
 final formatter = DateFormat.yMd();
 
+// Widget for adding a new expense
 class NewExpense extends StatefulWidget {
   const NewExpense({super.key, required this.onAddExpense});
 
+  // Callback function to add a new expense
   final void Function(Expense expense) onAddExpense;
 
   @override
@@ -19,11 +22,15 @@ class NewExpense extends StatefulWidget {
 }
 
 class _NewExpenseState extends State<NewExpense> {
+  // Controllers for handling input fields
   final _titleController = TextEditingController();
   final _amountController = TextEditingController();
+
+  // Variables to store selected date and category
   DateTime? _selectedDate;
   Category _selectedCategory = Category.leisure;
 
+  // Function to display date picker
   void _presentDatePicker() async {
     final now = DateTime.now();
     final firstDate = DateTime(now.year - 1, now.month, now.day);
@@ -40,6 +47,7 @@ class _NewExpenseState extends State<NewExpense> {
     });
   }
 
+  // Function to show an alert dialog in case of invalid input
   void _showDialog() {
     if (Platform.isIOS) {
       showCupertinoDialog(
@@ -47,7 +55,7 @@ class _NewExpenseState extends State<NewExpense> {
         builder: (ctx) => AlertDialog(
           title: const Text("Invalid input"),
           content: const Text(
-            "Please make sure a valid title, amount, date and category was entered",
+            "Please make sure a valid title, amount, date, and category were entered",
           ),
           actions: [
             TextButton(
@@ -65,7 +73,7 @@ class _NewExpenseState extends State<NewExpense> {
         builder: (ctx) => AlertDialog(
           title: const Text("Invalid input"),
           content: const Text(
-            "Please make sure a valid title, amount, date and category was entered",
+            "Please make sure a valid title, amount, date, and category were entered",
           ),
           actions: [
             TextButton(
@@ -80,6 +88,7 @@ class _NewExpenseState extends State<NewExpense> {
     }
   }
 
+  // Function to submit expense data
   void _submitExpenseData() {
     final enteredAmount = double.tryParse(_amountController.text);
     final amountIsInvalid = enteredAmount == null || enteredAmount <= 0;
@@ -101,6 +110,7 @@ class _NewExpenseState extends State<NewExpense> {
     Navigator.pop(context);
   }
 
+  // Dispose of controllers when the widget is disposed
   @override
   void dispose() {
     _titleController.dispose();
@@ -110,6 +120,7 @@ class _NewExpenseState extends State<NewExpense> {
 
   @override
   Widget build(BuildContext context) {
+    // Retrieve the space occupied by the keyboard
     final keyboardSpace = MediaQuery.of(context).viewInsets.bottom;
 
     return LayoutBuilder(
@@ -123,6 +134,7 @@ class _NewExpenseState extends State<NewExpense> {
               padding: EdgeInsets.fromLTRB(16, 16, 16, keyboardSpace + 16),
               child: Column(
                 children: [
+                  // Responsive layout for title and amount input fields
                   if (width >= 600)
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -157,6 +169,7 @@ class _NewExpenseState extends State<NewExpense> {
                         label: Text('Title'),
                       ),
                     ),
+                  // Responsive layout for category dropdown and date picker
                   if (width >= 600)
                     Row(
                       children: [
@@ -234,6 +247,7 @@ class _NewExpenseState extends State<NewExpense> {
                       ],
                     ),
                   const SizedBox(height: 16),
+                  // Responsive layout for action buttons
                   if (width >= 600)
                     Row(
                       children: [
