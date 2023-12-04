@@ -14,13 +14,13 @@ This is a simple app for tracking and managing personal expenses, intended for F
 
 The app has a main screen with two views:
 
-Portrait
-![App Screen 1](https://i.ibb.co/ykqHS5Z/screen1.png)
-![App Screen 2](https://i.ibb.co/ykqHS5Z/screen2.png)
+### Portrait
 
-Landscape
-![App Screen 3](https://i.ibb.co/ykqHS5Z/screen3.png)
-![App Screen 4](https://i.ibb.co/ykqHS5Z/screen4.png)
+![App Screen 1](https://i.ibb.co/31SMVxq/screen1.png)
+
+### Landscape
+
+![App Screen 2](https://i.ibb.co/6FNxc0c/screen2.png)
 
 ## Models
 
