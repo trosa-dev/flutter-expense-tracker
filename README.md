@@ -1,16 +1,44 @@
-# expense_tracker
+# Flutter Expense Tracker
 
-A new Flutter project.
+This is a simple app for tracking and managing personal expenses, intended for Flutter study.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Add new expenses by providing title, amount, date, and category
+- Remove expenses
+- Display expenses in a list
+- Show a graph with expenses grouped by category
+- Light and dark themes based on the system mode
 
-A few resources to get you started if this is your first Flutter project:
+## Screens
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+The app has a main screen with two views:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Portrait
+![App Screen 1](https://i.ibb.co/ykqHS5Z/screen1.png)
+![App Screen 2](https://i.ibb.co/ykqHS5Z/screen2.png)
+
+Landscape
+![App Screen 3](https://i.ibb.co/ykqHS5Z/screen3.png)
+![App Screen 4](https://i.ibb.co/ykqHS5Z/screen4.png)
+
+## Models
+
+The app uses the following models:
+
+- **Expense**: Represents an expense
+- **Category**: Enumeration with expense categories
+- **ExpenseBucket**: Represents a grouping of expenses by category
+
+## Widgets
+
+The main widgets used are:
+
+- **Expenses**: Manages the list of expenses and the app's state
+- **ExpensesList**: Displays the list of expenses
+- **ExpenseItem**: Widget for each row in the list
+- **Chart**: Displays the expense graph
+- **ChartBar**: Each bar in the graph
+- **NewExpense**: Modal screen for adding a new expense
+
+Feel free to use and modify it as you wish in your own projects!
